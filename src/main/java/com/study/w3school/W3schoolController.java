@@ -1,62 +1,65 @@
-package com.study.front.web;
+package com.study.w3school;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.RequestMapping;
 
 @Controller
-public class HomeController {
+@RequestMapping("/w3school")
+public class W3schoolController {
+	
+	String path = "/w3school";
 
-//	@GetMapping("index")
-	@GetMapping("/")
+	@GetMapping("/main")
 	public String index() {
-		//return "index";
-		return "/home";
+		//System.out.println("path = " + path);
+		
+		return path + "/main";
 	}
 
 	@GetMapping("/home")
 	public String home() {
-		return "/home";
+		return path + "/home";
 	}
 	
 	@GetMapping("/testhtml")
 	public String testHtml() {
-		return "/testhtml";
+		return path + "/testhtml";
 	}
 	
 	@GetMapping("/testcss")
 	public String testCss() {
-		return "/testcss";
+		return path + "/testcss";
 	}
 	
 	@GetMapping("/testjs")
 	public String testJs() {
-		return "/testjs";
+		return path + "/testjs";
 	}
 	
 	@GetMapping("/testjquery")
 	public String testJquery() {
-		return "/testjquery";
+		return path + "/testjquery";
 	}
 	
 	@GetMapping("/testajax")
 	public String testAjax() {
-		return "/testajax";
+		return path + "/testajax";
 	}
 
 	@GetMapping("/testjsp")
 	public String testJsp() {
-		return "/testjsp";
+		return path + "/testjsp";
 	}
 	
 	@GetMapping("/testresponsive")
 	public String testResponsive() {
-		return "/testresponsive";
+		return path + "/testresponsive";
 	}
 	
 	@GetMapping("/testweb")
 	public String testWeb() {
-		return "/testweb";
+		return path + "/testweb";
 	}
-
 	
 }
