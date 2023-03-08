@@ -12,14 +12,7 @@ public class W3schoolController {
 
 	@GetMapping("/main")
 	public String index() {
-		//System.out.println("path = " + path);
-		
 		return path + "/main";
-	}
-
-	@GetMapping("/home")
-	public String home() {
-		return path + "/home";
 	}
 	
 	@GetMapping("/testhtml")

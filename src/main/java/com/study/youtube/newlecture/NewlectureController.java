@@ -1,21 +1,20 @@
-package com.study;
+package com.study.youtube.newlecture;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 @Controller
-@RequestMapping("/")
-public class HomeController {
+@RequestMapping("/newlecture")
+public class NewlectureController {
+
+	String path = "/newlecture";
 	
-	@GetMapping("/")
+	@GetMapping("/main")
 	public String index() {
-		// return "index";
-		return "/home";
+		return path + "/main";
 	}
 	
-	@GetMapping("/home")
-	public String home() {
-		return "/home";
-	}
+	
+	
 }
