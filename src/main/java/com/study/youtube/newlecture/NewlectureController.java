@@ -15,6 +15,16 @@ public class NewlectureController {
 		return path + "/main";
 	}
 	
+	@GetMapping("/testhtml")
+	public String testHtml() {
+		return path + "/testhtml";
+	}
+	
+	@GetMapping("/testcss")
+	public String testCss() {
+		return path + "/testcss";
+	}
+	
 	
 	
 }
