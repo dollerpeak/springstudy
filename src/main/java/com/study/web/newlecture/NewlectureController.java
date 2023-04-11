@@ -1,4 +1,4 @@
-package com.study.youtube.newlecture;
+package com.study.web.newlecture;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -15,16 +15,25 @@ public class NewlectureController {
 		return path + "/main";
 	}
 	
-	@GetMapping("/testhtml")
+	@GetMapping("/html")
 	public String testHtml() {
-		return path + "/testhtml";
+		return path + "/html";
 	}
 	
-	@GetMapping("/testcss")
+	@GetMapping("/css")
 	public String testCss() {
-		return path + "/testcss";
+		return path + "/css";
 	}
 	
+	@GetMapping("/position")
+	public String testPosition() {
+		return path + "/position";
+	}
+	
+	@GetMapping("/layout")
+	public String testLayout() {
+		return path + "/layout";
+	}
 	
 	
 }

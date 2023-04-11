@@ -6,102 +6,166 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-
-    <!-- 
-    <link href="/static/css/newlecture/reset.css" rel="stylesheet" type="text/css"> 
-    -->
-    <link href="/static/css/newlecture/layout.css" rel="stylesheet" type="text/css">
 </head>
 
 <body>
-    <header>
-        <h2>sticky :: html layout은 static하게 쌓인다.</h2>
-        <h2>sticky :: 전체 행(수평, width)을 사용하고</h2>
-        <h2>sticky :: 행의 높이는 content에 따라간다.</h2>
-    </header>
+    <!-- 자동정렬 ctrl+k+f -->
 
-    <br>
+    <h1>뉴렉처 온라인</h1>
+    
+    <div>
+        <div>
+            <h3>메인메뉴</h3>
+            <ul>
+                <li>학습가이드</li>
+                <li>강좌선택</li>
+                <li>AnswerIs</li>
+            </ul>
+        </div>
+    
+        <div>
+            <h3>강좌검색폼</h3>
+            <form>
+                <fieldset>
+                    <legend>검색어 입력필드</legend>
+                    <label>과정검색</label>
+                    <input type="text">
+                    <input type="submit" value="검색">
+                </fieldset>
+            </form>
+        </div>
+    
+        <div>
+            <h3>회원메뉴</h3>
+            <ul>
+                <li>HOME</li>
+                <li>로그인</li>
+                <li>회원가입</li>
+            </ul>
+        </div>
+    
+        <div>
+            <h3>바로가기메뉴</h3>
+            <ul>
+                <li>마이페이지</li>
+                <li>고객센터</li>
+            </ul>
+        </div>
+    </div>
 
-    <section id="s1">
-        <h1>포지션 : absolute</h1>
+    <div>
+        <h2>고객센터</h2>
+
+        <div>
+            <h3>고객센터메뉴</h3>
+            <ul>
+                <li>공지사항</li>
+                <li>자주하는 질문</li>
+                <li>수강문의</li>
+                <li>이벤트</li>
+            </ul>
+        </div>
+        <div>
+            <h3>협력업체</h3>
+            <ul>
+                <li>노트펍스</li>
+                <li>나무랩연구소</li>
+            </ul>
+        </div>
+        <div>
+            <h2>공지사항</h2>
+
+            <ol>
+                <li>home</li>
+                <li>고객센터</li>
+                <li>공지사항</li>
+            </ol>
+        </div>
+    </div>
+
+    <form>
+        <fieldset>
+            <legend>검색어 입력필드</legend>
+            <label>검색분류</label>
+            <select>
+                <option value="title">제목</option>
+                <option value="writer">작성자</option>
+            </select>
+            <label>검색어</label>
+            <input type="text">
+            <input type="submit" value="검색">
+        </fieldset>
+    </form>
+
+    <table border="1">
+        <tr>
+            <td>번호</td>
+            <td>제목</td>
+            <td>작성자</td>
+            <td>작성일</td>
+            <td>조회수</td>
+        </tr>
+        <tr>
+            <td>3</td>
+            <td>자바 백엔드 개발자들을 위한 새로운강의</td>
+            <td>newlec</td>
+            <td>2023-03-17</td>
+            <td>169</td>
+        </tr>
+        <tr>
+            <td>2</td>
+            <td>jquery와 angular 프레임워크 1강 등록</td>
+            <td>권헌태</td>
+            <td>2022-01-16</td>
+            <td>152</td>
+        </tr>
+        <tr>
+            <td>1</td>
+            <td>모든 강의를 무료로 새로 시작</td>
+            <td>엣데이터</td>
+            <td>2021-11-17</td>
+            <td>321</td>
+        </tr>
+    </table>
+
+    <div>
+        1 / 1 page
+    </div>
+
+    <div>
+        <div>이전</div>
         <ul>
-            <li>absolute :: 1111</li>
-            <li>absolute :: 2222</li>
-            <li>absolute :: 3333</li>
-            <li>자신의 위치가 이동되고 나머지가 정렬</li>
-            <li>부모에 relative을 주면 그 영역안에서 이동</li>
+            <li>1</li>
+            <li>2</li>
+            <li>3</li>
+            <li>4</li>
+            <li>5</li>
         </ul>
-    </section>
+        <div>다음</div>
+    </div>
 
-    <br>
+    <h2>회사정보</h2>
 
-    <section id="s2">
-        <h1>포지션 : relative</h1>
-        <ul>
-            <li>relative :: 1111</li>
-            <li>relative :: 2222</li>
-            <li>relative :: 3333</li>
-            <li>자신의 위치는 남겨두고 이동</li>
-        </ul>
-    </section>
+    <dl>
+        <dt>주소:</dt>
+        <dd>서울특별시 노원구 노해로 491 중앙빌딩 4층 4034호</dd>
+        <dt>관리자메일:</dt>
+        <dd>admin@newlecture.com</dd>
+        <dt>사업자 등록번호:</dt>
+        <dd>639-88-01988</dd>
+        <dt>통신 판매업:</dt>
+        <dd>신고제 2013-서울강동-0969 호</dd>
+        <dt>상호:</dt>
+        <dd>(주)뉴렉처</dd>
+        <dt>대표:</dt>
+        <dd>박용우</dd>
+        <dt>전화번호:</dt>
+        <dd>070-4206-4084</dd>
+    </dl>
 
-    <br>
-
-    <section id="s3">
-        <h1>포지션 : fixed</h1>
-        <ul>
-            <li>fixed :: 1111</li>
-            <li>fixed :: 2222</li>
-            <li>fixed :: 3333</li>
-            <li>absolute와 비슷한데 페이지 기준이 아니라 화면 기준으로 고정된 영역에 존재</li>
-            <li>화면의 최상단에 위치하게 되고 아래 컨텐츠를 가리게 됨</li>
-            <li>부모에 relative을 줘도 무시하고 적용</li>
-        </ul>
-    </section>
-
-    <br>
-
-    <section id="s4">
-        <h1>포지션 : sticky</h1>
-        <ul>
-            <li>sticky :: 1111</li>
-            <li>sticky :: 2222</li>
-            <li>sticky :: 3333</li>
-            <li>absolute와 비슷한데 페이지 기준이 아니라 화면 기준으로 고정된 영역에 존재</li>
-            <li>fixed와 달리 아래 컨텐츠를 가리지 않고 fixed의 기능과 동일하게 적용</li>
-            <li>화면의 최상단에 위치하게 되고 아래 컨텐츠를 가리게 됨</li>
-            <li>absolute가 있다면 가려지는 현상이 있네</li>
-            <li>주로 모바일 화면에서 사용함</li>
-        </ul>
-    </section>
-
-    <!-- scroll 영역 만들기 -->
-    scroll make <br>
-    scroll make <br>
-    scroll make <br>
-    scroll make <br>
-    scroll make <br>
-    scroll make <br>
-    scroll make <br>
-    scroll make <br>
-    scroll make <br>
-    scroll make <br>
-    scroll make <br>
-    scroll make <br>
-    scroll make <br>
-    scroll make <br>
-    scroll make <br>
-    scroll make <br>
-    scroll make <br>
-    scroll make <br>
-    scroll make <br>
-    scroll make <br>
-    scroll make <br>
-    scroll make <br>
-    scroll make <br>
-    scroll make <br>
-    scroll make <br>
-    scroll make <br>
+    <div>
+        Copyright ⓒ newlecture.com 2012-2014 All Right Reserved. Contact admin@newlecture.com for more information
+    </div>
 
 </body>
 

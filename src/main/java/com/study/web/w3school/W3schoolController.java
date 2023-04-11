@@ -1,4 +1,4 @@
-package com.study.w3school;
+package com.study.web.w3school;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -15,44 +15,44 @@ public class W3schoolController {
 		return path + "/main";
 	}
 	
-	@GetMapping("/testhtml")
+	@GetMapping("/html")
 	public String testHtml() {
-		return path + "/testhtml";
+		return path + "/html";
 	}
 	
-	@GetMapping("/testcss")
+	@GetMapping("/css")
 	public String testCss() {
-		return path + "/testcss";
+		return path + "/css";
 	}
 	
-	@GetMapping("/testjs")
+	@GetMapping("/js")
 	public String testJs() {
-		return path + "/testjs";
+		return path + "/js";
 	}
 	
-	@GetMapping("/testjquery")
+	@GetMapping("/jquery")
 	public String testJquery() {
-		return path + "/testjquery";
+		return path + "/jquery";
 	}
 	
-	@GetMapping("/testajax")
+	@GetMapping("/ajax")
 	public String testAjax() {
-		return path + "/testajax";
+		return path + "/ajax";
 	}
 
-	@GetMapping("/testjsp")
+	@GetMapping("/jsp")
 	public String testJsp() {
-		return path + "/testjsp";
+		return path + "/jsp";
 	}
 	
-	@GetMapping("/testresponsive")
+	@GetMapping("/responsive")
 	public String testResponsive() {
-		return path + "/testresponsive";
+		return path + "/responsive";
 	}
 	
-	@GetMapping("/testweb")
-	public String testWeb() {
-		return path + "/testweb";
+	@GetMapping("/layout")
+	public String testlayout() {
+		return path + "/layout";
 	}
 	
 }
