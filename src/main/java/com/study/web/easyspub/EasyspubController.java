@@ -15,14 +15,14 @@ public class EasyspubController {
 		return path + "/main";
 	}
 	
-	@GetMapping("/testhtml")
+	@GetMapping("/html")
 	public String testHtml() {
-		return path + "/testhtml";
+		return path + "/html";
 	}
 	
-	@GetMapping("/testcss")
+	@GetMapping("/css")
 	public String testCss() {
-		return path + "/testcss";
+		return path + "/css";
 	}
 
 }
