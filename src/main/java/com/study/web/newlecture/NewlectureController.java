@@ -35,5 +35,4 @@ public class NewlectureController {
 		return path + "/layout";
 	}
 	
-	
 }
