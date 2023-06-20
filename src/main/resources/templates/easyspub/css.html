@@ -115,6 +115,163 @@
 	</section>
 	<hr>
 
+	<section>
+		<h3>[2023-06-20] 레이아웃을 구성하는 css 박스모델</h3>
+		<style>
+			#layoutboxmodel1 {				
+			}
+		</style>
+		<div id="layoutboxmodel1">basic
+			<ul>
+				<li>menu_1</li>
+				<li>menu_2</li>
+				<li>menu_3</li>
+			</ul>
+		</div>
+		<br>
+
+		<style>
+			#layoutboxmodel2 ul {
+				list-style: none;
+			}
+			#layoutboxmodel2 ul li {
+				border: 1px solid black;
+				padding: 20px;
+				margin: 0 20px;
+			}
+		</style>
+		<div id="layoutboxmodel2">css
+			<ul>
+				<li>menu_1</li>
+				<li>menu_2</li>
+				<li>menu_3</li>
+			</ul>
+		</div>
+		<br>
+
+		<style>
+			#layoutboxmodel3 ul {
+				list-style: none;
+			}
+			#layoutboxmodel3 ul li {
+				display: inline-block;
+				border: 1px solid black;
+				padding: 20px;
+				margin: 0 20px;
+			}
+		</style>
+		<div id="layoutboxmodel3">style
+			<ul>
+				<li>menu_1</li>
+				<li>menu_2</li>
+				<li>menu_3</li>
+			</ul>
+		</div>
+		<br>
+
+		<style>
+			.box1 {
+				width: 100px;
+				height: 100px;
+				border: 1px solid black;
+				display: inline-block;
+				margin: 50px;
+			}
+			.box1 > div {
+				width: 100px;
+				height: 100px;
+				background-color: orange;
+			}
+			#movex:hover {
+				transform: translateX(30px);
+			}
+			#movey:hover {
+				transform: translateY(30px);
+			}
+			#movez:hover {
+				transform: translate(30px, 30px);
+			}
+		</style>
+		<p>move</p>
+		<div class="box1">
+			<div id="movex"></div>
+		</div>
+		<div class="box1">
+			<div id="movey"></div>
+		</div>
+		<div class="box1">
+			<div id="movez"></div>
+		</div>
+		<br>
+
+		<style>
+			#scalex:hover {
+				transform: scaleX(1.5);
+			}
+			#scaley:hover {
+				transform: scaleY(1.5);
+			}
+			#scalez:hover {
+				transform: scale(0.5, 1.5);
+			}
+		</style>
+		<p>scale</p>
+		<div class="box1">
+			<div id="scalex"></div>
+		</div>
+		<div class="box1">
+			<div id="scaley"></div>
+		</div>
+		<div class="box1">
+			<div id="scalez"></div>
+		</div>
+		<br>
+
+		<style>
+			.box2 {
+				width: 100px;
+				height: 100px;
+				border: 1px solid black;
+				display: inline-block;
+				margin: 50px;
+				perspective: 200px; /* 원근감 */
+			}
+			.box2 > div {
+				width: 100px;
+				height: 100px;
+				background-color: orange;
+				transition: all 2s; /* 동안 연출 */
+			}
+			#rotatex:hover {
+				transform: rotateX(55deg);
+			}
+			#rotatey:hover {
+				transform: rotateY(55deg);
+			}
+			#rotatez:hover {
+				transform: rotateZ(55deg);
+			}
+			#rotatexyz:hover {
+				transform: rotate3d(2.5, 1.2, -1.5, 55deg);
+			}
+		</style>
+		<p>입체회전</p>
+		<div class="box2">
+			<div id="rotatex"></div>
+		</div>
+		<div class="box2">
+			<div id="rotatey"></div>
+		</div>
+		<div class="box2">
+			<div id="rotatez"></div>
+		</div>
+		<div class="box2">
+			<div id="rotatexyz"></div>
+		</div>
+		<br>
+	</section>
+	<hr>
+
 	<a href="/easyspub/main"><h1 id="top">back main</h1></a>
 
 </body>
