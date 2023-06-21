@@ -24,5 +24,20 @@ public class EasyspubController {
 	public String testCss() {
 		return path + "/css";
 	}
+	
+	@GetMapping("/viewport")
+	public String testViewport() {
+		return path + "/viewport";
+	}
+	
+	@GetMapping("/flex")
+	public String testFlex() {
+		return path + "/flex";
+	}
+	
+	@GetMapping("/grid")
+	public String testGrid() {
+		return path + "//grid";
+	}
 
 }
