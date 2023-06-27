@@ -37,7 +37,12 @@ public class EasyspubController {
 	
 	@GetMapping("/grid")
 	public String testGrid() {
-		return path + "//grid";
+		return path + "/grid";
+	}
+	
+	@GetMapping("/js_1")
+	public String testJs1() {
+		return path + "/js_1";
 	}
 
 }
