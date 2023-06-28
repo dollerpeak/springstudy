@@ -35,5 +35,12 @@ document.querySelector("#change").onclick = function() {
     bg.style.color = "green";
 }
 
-//
+window.onload = function(){
+    console.log("www1111111111");
+}
+
+
+document.addEventListener("DOMcontentLoaded", function (){
+    console.log("1111111111");
+});
 
