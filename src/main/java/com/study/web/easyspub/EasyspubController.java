@@ -40,9 +40,19 @@ public class EasyspubController {
 		return path + "/grid";
 	}
 	
+	@GetMapping("/js_ex")
+	public String testJsEx() {
+		return path + "/js_ex";
+	}
+	
 	@GetMapping("/js_1")
 	public String testJs1() {
 		return path + "/js_1";
+	}
+	
+	@GetMapping("/js_2")
+	public String testJs2() {
+		return path + "/js_2";
 	}
 
 }

@@ -1,46 +1,57 @@
 
-let heading = document.querySelector("#heading");
+document.addEventListener("DOMContentLoaded", function () {
+    console.log("DOMContentLoaded");
+})
 
-heading.onclick = function () {    
-    let color = heading.style.color;
-    if (color == "red") {
-        heading.style.color = "green";
-    } else {
-        heading.style.color = "red";
-    }
-
-    //console.log(typeof color);
+window.onload = function () {
+    console.log("window.onload");
 }
 
-// test 1
-function changeColor_1(color) {
-    let bg = document.querySelector("#bg");
-    bg.style.backgroundColor = color;
+window.onunload = function () {
+    console.log("window.onunload");
 }
 
-// test 2
-// let chgButton = document.querySelector("#change");
-// chgButton.onclick = changeColor_2;
-
-// test 3
-// document.querySelector("#change").onclick = changeColor_2;
-// function changeColor_2() {
-//     let bg = document.querySelector("#test2");
-//     bg.style.color = "green";
+// window
+//case 1
+// window.onload = function(){
+//     console.log("window.onload");
+// }
+// window.onunload = function(){
+//     console.log("window.onunload");
+// }
+// case 2
+// window.onload = windowLoad;
+// window.onunload = windowUnLoad;
+// function windowLoad() {
+//     console.log("windowLoad");
+// }
+// function windowUnLoad() {
+//     console.log("windowUnLoad");
+// }
+// case 3
+// window.addEventListener("load", function(){
+//     console.log("addEventListener.load");
+// })
+// window.addEventListener("unload", function(){
+//     console.log("addEventListener.unload");
+// })
+// case 4
+// window.addEventListener("load", windowLoad);
+// window.addEventListener("unload", windowUnLoad);
+// function windowLoad() {
+//     console.log("windowLoad 11");
+// }
+// function windowUnLoad() {
+//     console.log("windowUnLoad 11");
 // }
 
-// test 4
-document.querySelector("#change").onclick = function() {
-    let bg = document.querySelector("#test2");
-    bg.style.color = "green";
-}
-
-window.onload = function(){
-    console.log("www1111111111");
-}
-
-
-document.addEventListener("DOMcontentLoaded", function (){
-    console.log("1111111111");
-});
-
+// document
+//case 1
+// document.addEventListener("DOMContentLoaded", function () {
+//     console.log("DOMContentLoaded");
+// })
+//case 2
+// document.addEventListener("DOMContentLoaded", documentContentLoaded);
+// function documentContentLoaded() {
+//     console.log("DOMContentLoaded");
+// }
