@@ -92,7 +92,7 @@ print("--------------------------------------")
 a = {1, 2, 3, 4, 5}
 b = {5, 6, 7, 8, 9}
 print("type = ", a)
-print("type = ", type(a))
+print("set = ", type(a))
 print("type = ", a.intersection(b))
 print("type = ", a.union(b))
 print("type = ", a.difference(b))

@@ -17,6 +17,8 @@ import sample.image.render as render
 import sample.sound.play as soundPlay
 import sample.sound.stop as soundStop
 
+
+
 print("__init__은 디렉토리에 있는 모든 py파일(패키지)을 import할때 미리 __all___정의해 둘수 있다.")
 print("근데 * 이거 쓰기는 좀 그러니깐 그냥 개별적으로 py파일(모듈)을 import하자.")
 render.test_1()
