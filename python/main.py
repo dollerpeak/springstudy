@@ -25,6 +25,20 @@ render.test_1()
 soundPlay.test_1()
 soundStop.test_1()
 
+def doc():
+    """
+    agceadgasd
+    12115415
+    !@#!%@#@#$^
+    """
+    print(doc.__doc__)
+
+doc()
+render.__doc__
+
+
+
+
 
 if __name__ == "__main__":
     # print("main으로 실행")
