@@ -1,4 +1,4 @@
-package com.study.web.easyspub;
+package com.study.easyspub;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;

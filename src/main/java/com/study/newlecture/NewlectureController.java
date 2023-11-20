@@ -1,4 +1,4 @@
-package com.study.web.newlecture;
+package com.study.newlecture;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
