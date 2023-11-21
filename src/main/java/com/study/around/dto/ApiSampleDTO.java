@@ -7,7 +7,7 @@ import lombok.ToString;
 @Getter
 @Setter
 @ToString
-public class AroundDTO {
+public class ApiSampleDTO {	
 	private String id;
 	private String name;
 	private int age;

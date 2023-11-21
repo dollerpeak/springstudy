@@ -5,15 +5,36 @@ import java.util.Map.Entry;
 
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.study.around.dto.AroundDTO;
+import com.study.around.dto.ApiSampleDTO;
 
 @RestController
 @RequestMapping("/around")
-public class AroundController {
+public class ApiSampleController {
+
+	// API를 통해 값을 전달하는 방법
+	// @PathVariable
+	// - URL에 값을 전달 : http://localhost:8081/around/test8/value
+	// - mapping에 값을 명시 해야함 : @GetMapping("/test8/{name}")
+	// - 하나의 URL에 여러값을 전달할 수 있음
+	// - value옵션을 사용할 수 있음 : URL에 있는 {}이름과 아큐먼트이름이 같지 않아도 됨
+	// @GetMapping("/test9/{name}")
+	// public String test9(@PathVariable(value = "name") String value) {
+	// @RequestParam
+	// - URL에 값을 전달 : http://localhost:8081/around/test3?name=value
+	// 전달 방식은 URL끝에 ?시작하고 값은 key=value 형식이고 연결은 &
+	// - mapping에는 URL까지만 작성
+	// - value, required, defaultValue 사용가능
+	// - key=value형식의 값이므로 Map, DTO형태로도 받을 수 있음
+	// - 아무런 어노테이션이 없다면 @RequestParam 이 디폴트
+	// @RequestBody
+	// - request body에 값을 전달하는 방식으로 주로 POST에서 사용
+	// - 꼭 @RequestBody 필요
 
 	@GetMapping("/test1")
 	public String test1() {
@@ -32,9 +53,7 @@ public class AroundController {
 		return name;
 	}
 
-	// ///////////////////////////////////////////////////////////////////////////
 	// @RequestParam test
-	// ///////////////////////////////////////////////////////////////////////////
 	@GetMapping("/test3")
 	public String test3(@RequestParam(defaultValue = "default") String name) {
 		// http://localhost:8081/around/test3?name=value
@@ -86,9 +105,7 @@ public class AroundController {
 		return result;
 	}
 
-	// ///////////////////////////////////////////////////////////////////////////
 	// @PathVariable test
-	// ///////////////////////////////////////////////////////////////////////////
 	@GetMapping("/test8/{name}")
 	public String test8(@PathVariable String name) {
 		// http://localhost:8081/around/test8/value
@@ -121,26 +138,29 @@ public class AroundController {
 	// - @RequestParam, @PathVariable, @RequestBody 사용하지 않는다.
 	// ///////////////////////////////////////////////////////////////////////////
 	@GetMapping("/test11")
-	public String test11(AroundDTO dto) {
+	public String test11(ApiSampleDTO dto) {
 		// http://localhost:8081/around/test11?id=a&name=b&age=10
 		// System.out.println(dto.toString());
 		return dto.toString();
 	}
 
-	// @PathVariable :
-	// - URL에 값만 담아 보낸다.
-	// - mapping url에 {}파라메터명과 변수가 같아야 한다. (value옵션 사용가능)
-	// @RequestParam
-	// - URL에 ?부터 변수와 값을 담아 보내고 연속된 구분자는 &사용 (key, value와 동일)
-	// - mapping url에는 URL만 표기, ?전가지만 표기 (value, required, defaultValue 사용가능)
-	// - Map, DTO로 값을 받을 수 있다.
-	// @RequestBody
-	// - 주로 POST에 사용되고 request body부분에 json형식으로 값을 보낸다.
-	// - 주로 DTO로 값을 받는다.
-	
-	post테스트 할때 @RequestParam, @PathVariable로 값을 처리해 보자.
-	
-	
-	
+	// POST
+	@PostMapping("/test12")
+	public String test12(@RequestBody ApiSampleDTO dto) {
+		// http://localhost:8081/around/test11?id=a&name=b&age=10
+		return dto.toString();
+	}
+
+	@PostMapping("/test13")
+	public String test13(@RequestBody Map<String, String> map) {
+		// http://localhost:8081/around/test11?id=a&name=b&age=10
+		String reval = "";
+
+		for (Entry<String, String> entry : map.entrySet()) {
+			reval += entry.getKey() + entry.getValue();
+		}
+
+		return reval;
+	}
 
 }
