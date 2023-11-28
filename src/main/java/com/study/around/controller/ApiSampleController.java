@@ -11,27 +11,30 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.study.around.dto.ApiSampleDTO;
+import com.study.around.data.dto.ApiSampleDTO;
 
 @RestController
 @RequestMapping("/around")
 public class ApiSampleController {
 
 	// API를 통해 값을 전달하는 방법
+	
 	// @PathVariable
 	// - URL에 값을 전달 : http://localhost:8081/around/test8/value
 	// - mapping에 값을 명시 해야함 : @GetMapping("/test8/{name}")
 	// - 하나의 URL에 여러값을 전달할 수 있음
 	// - value옵션을 사용할 수 있음 : URL에 있는 {}이름과 아큐먼트이름이 같지 않아도 됨
-	// @GetMapping("/test9/{name}")
-	// public String test9(@PathVariable(value = "name") String value) {
-	// @RequestParam
+	//   @GetMapping("/test9/{name}")
+	//   public String test9(@PathVariable(value = "name") String value) {
+	
+	// @RequestParam (query string)	
 	// - URL에 값을 전달 : http://localhost:8081/around/test3?name=value
-	// 전달 방식은 URL끝에 ?시작하고 값은 key=value 형식이고 연결은 &
+	//   전달 방식은 URL끝에 ?시작하고 값은 key=value 형식이고 연결은 &
 	// - mapping에는 URL까지만 작성
 	// - value, required, defaultValue 사용가능
 	// - key=value형식의 값이므로 Map, DTO형태로도 받을 수 있음
 	// - 아무런 어노테이션이 없다면 @RequestParam 이 디폴트
+	
 	// @RequestBody
 	// - request body에 값을 전달하는 방식으로 주로 POST에서 사용
 	// - 꼭 @RequestBody 필요

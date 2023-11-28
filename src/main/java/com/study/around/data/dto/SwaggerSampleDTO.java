@@ -1,4 +1,4 @@
-package com.study.around.dto;
+package com.study.around.data.dto;
 
 import io.swagger.v3.oas.annotations.media.Schema;
 import lombok.Getter;

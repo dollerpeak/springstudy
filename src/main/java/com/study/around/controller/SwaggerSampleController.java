@@ -12,7 +12,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.study.around.dto.SwaggerSampleDTO;
+import com.study.around.data.dto.SwaggerSampleDTO;
 
 import io.swagger.v3.oas.annotations.Operation;
 import io.swagger.v3.oas.annotations.Parameter;
@@ -23,9 +23,9 @@ import io.swagger.v3.oas.annotations.responses.ApiResponse;
 import io.swagger.v3.oas.annotations.responses.ApiResponses;
 import io.swagger.v3.oas.annotations.tags.Tag;
 
-@Tag(name = "Controller 제목", description = "Controller 설명")
 @RestController
 @RequestMapping("/swagger")
+@Tag(name = "Controller 제목", description = "Controller 설명")
 public class SwaggerSampleController {
 
 	// Swagger
@@ -39,30 +39,30 @@ public class SwaggerSampleController {
 	// - @ApiResponse는 제외하고 @Parameter 까지는 작성해 주면 좋을 것 같다.
 
 	// @PathVariable
+	@GetMapping("/get/{value}")
 	@Operation(summary = "@PathVariable 한개", description = "@PathVariable 한개 문자열 반환")
 	@Parameter(name = "value", description = "문자열 한개", example = "test1", required = true) // default required = false
-	@GetMapping("/get/{value}")
 	public String getVariableOne(@PathVariable String value) {
 		// http://localhost:8081/swagger/get/test1
 		return value;
 	}
-
+	
+	@GetMapping("/get/many/v1/{value1}/v2/{value2}/{v3}")
 	@Operation(summary = "@PathVariable 여러개", description = "@PathVariable 여러개 문자열 반환")
 	@Parameters({ @Parameter(name = "value1", description = "문자열", example = "test1", required = true),
 			@Parameter(name = "value2", description = "문자열", example = "test2", required = true),
 			@Parameter(name = "v3", description = "문자열", example = "test3", required = true) 
 	})
-	@GetMapping("/get/many/v1/{value1}/v2/{value2}/{v3}")
 	public String getVariableMany(@PathVariable String value1, @PathVariable String value2, @PathVariable String v3) {
 		// http://localhost:8081/swagger/get/many/v1/test1/v2/test2/test3
 		return value1 + value2 + v3;
 	}
-
+	
+	@GetMapping("/get/dto/v1/{id}/v2/{name}/{age}")
 	@Operation(summary = "@PathVariable 여러개", description = "@PathVariable 여러개 DTO반환")
 	@Parameter(name = "id", description = "id문자열", example = "isid", required = true)
 	@Parameter(name = "name", description = "name문자열", example = "isname", required = true)
 	@Parameter(name = "age", description = "age", example = "12", required = true)
-	@GetMapping("/get/dto/v1/{id}/v2/{name}/{age}")
 	public SwaggerSampleDTO getVariableManyToDto(@PathVariable String id, @PathVariable String name,
 			@PathVariable String age) {
 		// http://localhost:8081/swagger/get/dto/v1/isid/v2/isname/12
@@ -75,33 +75,33 @@ public class SwaggerSampleController {
 	}
 
 	// @RequestParam
+	@GetMapping("/get/one")
 	@Operation(summary = "@RequestParam 한개", description = "@RequestParam 한개 문자열 반환")
 	@Parameter(name = "value", description = "문자열", example = "test1", required = true)
-	@GetMapping("/get/one")
 	public String getParamOne(@RequestParam String value) {
 		// http://localhost:8081/swagger/get/one?value=test1
 		return value;
 	}
-
+	
+	@GetMapping("/get/many")
 	@Operation(summary = "@RequestParam 여러개", description = "@RequestParam 여러개 문자열 반환")
 	@Parameter(name = "value", description = "문자열", example = "value1=test1&value2=test2", required = true)
-	@GetMapping("/get/many")
 	public String getParamMany(@RequestParam String value1, @RequestParam String value2) {
 		// http://localhost:8081/swagger/get/many?value1=test1&value2=test2
 		return value1 + value2;
 	}
-
+	
+	@GetMapping("/get/map")
 	@Operation(summary = "@RequestParam 여러개", description = "@RequestParam 여러개 map 반환")
 	@Parameter(name = "map", description = "map", example = "key1=value1&key2=value2&key3=value3", required = true)
-	@GetMapping("/get/map")
 	public Map<String, String> getParamToMap(@RequestParam Map<String, String> map) {
 		// http://localhost:8081/swagger/get/map?key1=value1&key2=value2&key3=value3
 		return map;
 	}
-
+	
+	@GetMapping("/get/dto")
 	@Operation(summary = "@RequestParam 여러개", description = "@RequestParam 여러개 dto 반환")
 	@Parameter(name = "map", description = "map", example = "key1=isid&key2=isname&key3=12", required = true)
-	@GetMapping("/get/dto")
 	public SwaggerSampleDTO getParamToDto(@RequestParam Map<String, String> map) {
 		// http://localhost:8081/swagger/get/dto?key1=isid&key2=isname&key3=12
 		SwaggerSampleDTO dto = new SwaggerSampleDTO();
@@ -113,9 +113,9 @@ public class SwaggerSampleController {
 	}
 
 	// @RequestBody
+	@PostMapping("/post/map")
 	@Operation(summary = "@RequestBody map", description = "@RequestBody map 받기")
 	@Parameter(name = "map", description = "map", example = "http://localhost:8081/swagger/post/map", required = true)
-	@PostMapping("/post/map")
 	public Map<String, String> postToMap(@RequestBody Map<String, String> map) {
 		// http://localhost:8081/swagger/post/map
 		// "id": "isid",
@@ -123,15 +123,15 @@ public class SwaggerSampleController {
 		// "age": 12
 		return map;
 	}
-
+		
+	@PostMapping("/post/dto")
 	@Operation(summary = "@RequestBody dto", description = "@RequestBody dto 받기")
 	@Parameter(name = "dto", description = "dto", example = "http://localhost:8081/swagger/post/dto", required = true)
 	@ApiResponses({
 			@ApiResponse(responseCode = "200", description = "성공", content = @Content(schema = @Schema(implementation = SwaggerSampleDTO.class))),
 			@ApiResponse(responseCode = "400", description = "클라이언트 에러", content = @Content(schema = @Schema(implementation = SwaggerSampleDTO.class))),
 			@ApiResponse(responseCode = "500", description = "서버 에러", content = @Content(schema = @Schema(implementation = SwaggerSampleDTO.class))) 
-	})	
-	@PostMapping("/post/dto")
+	})
 	public SwaggerSampleDTO postDto(@RequestBody SwaggerSampleDTO dto) {
 		// http://localhost:8081/swagger/post/dto
 		// "id": "isid",
@@ -140,8 +140,8 @@ public class SwaggerSampleController {
 		return dto;
 	}
 	
-	@Operation(summary = "@RequestBody ResponseEntity", description = "@RequestBody ResponseEntity 반환")
 	@PostMapping("/post/entity")
+	@Operation(summary = "@RequestBody ResponseEntity", description = "@RequestBody ResponseEntity 반환")
 	public ResponseEntity<SwaggerSampleDTO> postEntity(@RequestBody SwaggerSampleDTO dto) {
 		// http://localhost:8081/swagger/entity/dto
 		// "id": "isid",

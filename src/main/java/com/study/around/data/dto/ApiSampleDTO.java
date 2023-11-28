@@ -1,4 +1,4 @@
-package com.study.around.dto;
+package com.study.around.data.dto;
 
 import lombok.Getter;
 import lombok.Setter;
