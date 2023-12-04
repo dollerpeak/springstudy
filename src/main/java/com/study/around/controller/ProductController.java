@@ -13,8 +13,13 @@ import org.springframework.web.bind.annotation.RestController;
 import com.study.around.data.dto.ProductDto;
 import com.study.around.service.ProductService;
 
+import io.swagger.v3.oas.annotations.Operation;
+import io.swagger.v3.oas.annotations.tags.Tag;
+import lombok.extern.java.Log;
+
 @RestController
 @RequestMapping("/product")
+@Tag(name = "ProductController", description = "기능설명")
 public class ProductController {
 	
 	@Autowired
@@ -22,13 +27,18 @@ public class ProductController {
 	ProductDto productDto;
 
 	@GetMapping("/get/{productid}")
-	public ProductDto getProduct(@PathVariable String productid) {
+	@Operation(summary = "getProduct", description = "desc getProduct")
+//	public ProductDto getProduct(@PathVariable String productid) {
+	public ResponseEntity<ProductDto> getProduct(@PathVariable String productid) {
 		productDto = productService.getProduct(productid);
 		
-		return productDto;
+		
+//		return productDto;
+		return ResponseEntity.status(HttpStatus.OK).body(productDto);
 	}
 
 	@PostMapping("/post")
+	@Operation(summary = "createProduct", description = "desc createProduct")
 	public ResponseEntity<ProductDto> createProduct(@RequestBody ProductDto productdto) {
 		productDto = productService.saveProduct(productdto);
 		

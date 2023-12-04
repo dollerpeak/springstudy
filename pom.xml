@@ -82,6 +82,11 @@
 		</dependency>
 
 
+		<dependency>
+			<groupId>com.inflearn</groupId>
+			<artifactId>hello-wooa</artifactId>
+			<version>0.0.1</version>
+		</dependency>
 	</dependencies>
 
 	<build>
