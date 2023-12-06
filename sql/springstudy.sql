@@ -1,0 +1,80 @@
+
+-- 테이블 생성
+-- column name, data type, null|not null, default value, comment
+create table test 
+(
+	id int not null auto_increment comment '아이디',
+	name varchar(100) default null comment '이름',
+	age int default null comment '나이',
+	chg_date datetime default current_timestamp comment '변경일',
+	primary key(id)
+)
+
+create table zoo (
+	id int(11) not null auto_increment comment 'seq id',
+	species varchar(100) not null default 'any' comment '종',
+	gender varchar(1) not null default 'M' comment '성별',
+	name varchar(100) null default null comment '이름',
+	age int(4) null default null comment '나이',
+	reg_date datetime not null default current_timestamp comment '등록 날짜', 
+	chg_date datetime not null default current_timestamp comment '변경 날짜',
+	
+	constraint zoo_pk primary key(id) comment '동물원'
+)
+
+-- alter
+alter table zoo
+add reg_date datetime not null default current_timestamp comment '등록 날짜',
+add chg_date datetime not null default current_timestamp comment '변경 날짜'
+
+alter table zoo
+-- rename to zoo_park
+-- drop column detail
+-- change column test detail varchar(10)
+-- modify test int(10)
+-- add test varchar(1)
+	
+commit
+
+-- 테이블 삭제
+drop table product
+drop table zoo
+drop table zoo_park 
+
+rollback
+
+
+-- 테이블 삽입
+insert into zoo(species, gender, name, age) values ('dog', 'W','sam', 11);
+insert into test() values ()
+insert into zoo_park(species, gender, name, age) values ('dog', 'W','sam', 11);
+
+-- 테이블 수정
+update test 
+set name='bbb' 
+where id=1
+
+-- 테이블 조회
+select * from zoo
+select * from product
+
+
+
+select chg_date  from zoo
+select date_format(chg_date, '%Y-%m-%d %H:%i:%s')  from zoo
+
+-- delete
+delete from zoo 
+where id = 2;
+
+-- 
+rollback;
+commit;
+
+select now()
+select now(), sysdate(), current_timestamp
+select datetime()
+
+
+
+
