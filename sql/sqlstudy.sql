@@ -10,6 +10,7 @@ INNER JOIN orders -- 5
 ON customers.customer_id = orders.customer_id
 ORDER BY customers.customer_id;
 
+commit
 
 select sysdate(), now()  
 

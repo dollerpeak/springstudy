@@ -1,4 +1,5 @@
 
+use aroundhub
 -- 테이블 생성
 -- column name, data type, null|not null, default value, comment
 create table test 
@@ -46,8 +47,9 @@ rollback
 
 -- 테이블 삽입
 insert into zoo(species, gender, name, age) values ('dog', 'W','sam', 11);
+insert into zoo(species, gender, name, age) values ('dog', 'M','bob', 8);
+
 insert into test() values ()
-insert into zoo_park(species, gender, name, age) values ('dog', 'W','sam', 11);
 
 -- 테이블 수정
 update test 
