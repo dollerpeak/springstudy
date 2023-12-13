@@ -16,6 +16,9 @@ select sysdate(), now()
 select current_date(), current_time(), current_timestamp(), curtime()  
 
 
+select * from categories
+
+
 -- ------------------------------------------------------------------
 INSERT INTO categories
 (category_id, category_name)

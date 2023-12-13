@@ -1,4 +1,26 @@
 
+-- DML study-------------------------------------------------------------------------------
+
+select * from zoo
+select replace(reg_date, '.000', '') kk   from zoo
+select substr('아리랑테스트', 3, 2) 
+select substr('아리랑테스트', -3, 2)
+select substr(name,2,1) || '*' || substr(name,3,1) from zoo
+select concat(substr(name,2,1),'*',substr(name,3,1))  from zoo
+
+select round(3.64)
+select ceil(3.14)
+select floor(3.64)
+select truncate(3.64, 0)
+
+
+select now()
+select now(), sysdate(), current_timestamp
+select datetime()
+
+
+-- DDL -------------------------------------------------------------------------------
+
 -- 테이블 생성
 -- column name, data type, null|not null, default value, comment
 create table test 
@@ -74,6 +96,8 @@ commit;
 select now()
 select now(), sysdate(), current_timestamp
 select datetime()
+
+
 
 
 
