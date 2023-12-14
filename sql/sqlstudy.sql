@@ -10,6 +10,16 @@ INNER JOIN orders -- 5
 ON customers.customer_id = orders.customer_id
 ORDER BY customers.customer_id;
 
+
+SELECT customers.customer_id, orders.order_id, orders.order_date
+FROM customers -- 6
+left outer JOIN orders -- 5 
+ON customers.customer_id = orders.customer_id
+ORDER BY customers.customer_id;
+
+
+
+
 commit
 
 select sysdate(), now()  
