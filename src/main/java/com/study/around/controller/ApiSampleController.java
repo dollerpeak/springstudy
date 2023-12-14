@@ -13,8 +13,11 @@ import org.springframework.web.bind.annotation.RestController;
 
 import com.study.around.data.dto.ApiSampleDTO;
 
+import io.swagger.v3.oas.annotations.tags.Tag;
+
 @RestController
 @RequestMapping("/around")
+@Tag(name = "ApiSampleController", description = "desc ApiSampleController")
 public class ApiSampleController {
 
 	// API를 통해 값을 전달하는 방법

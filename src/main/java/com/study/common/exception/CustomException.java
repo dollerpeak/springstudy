@@ -1,19 +1,24 @@
 package com.study.common.exception;
 
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
 import org.springframework.http.HttpStatus;
 
+import lombok.AllArgsConstructor;
+import lombok.Getter;
+import lombok.NoArgsConstructor;
+import lombok.Setter;
+import lombok.ToString;
+
 @SuppressWarnings("serial")
+@Getter
+@Setter
+@ToString
+@AllArgsConstructor
+@NoArgsConstructor
 public class CustomException extends Exception {
-	private Logger logger = LoggerFactory.getLogger(this.getClass());
 
-	private Exception exception;
 	private HttpStatus httpStatus;
-
-	public CustomException() {
-		super();
-	}
+	private String exceptionMessage;
+	private String message;
 
 	public int getHttpStatusCode() {
 		return httpStatus.value();
@@ -23,12 +28,7 @@ public class CustomException extends Exception {
 		return httpStatus.series().toString();
 	}
 
-	public String getHttpStatusType() {
+	public String getHttpStatusReasonPhrase() {
 		return httpStatus.getReasonPhrase();
 	}
-
-	public HttpStatus getHttpStatus() {
-		return httpStatus;
-	}
-
 }

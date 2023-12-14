@@ -1,23 +1,35 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <configuration scan="true" scanPeriod="30 seconds">
+	<property name="LOG_DIR" value="./log" />
+	<property name="FILE_NAME" value="test.log" />
+	<property name="FILE_SIZE" value="1MB" />
+	<property name="FILE_COUNT" value="30" />
+	<property name="PATTERN" value="%d{yyyy-MM-dd HH:mm:ss.SSS} [%-5level] [%thread] %logger{36} : %msg%n" />
+	
     <!-- cosole -->
     <appender name="CONSOLE" class="ch.qos.logback.core.ConsoleAppender">
        <encoder>
-		   <!-- %logger{36} -->
-         <pattern>%d{yyyy-MM-dd HH:mm:ss.SSS} [%-5level] [%thread] %logger{36} : %msg%n</pattern>
+		 <!-- %logger{36} -->
+         <!--pattern>%d{yyyy-MM-dd HH:mm:ss.SSS} [%-5level] [%thread] %logger{36} : %msg%n</pattern-->>
+         <pattern>${PATTERN}</pattern>
        </encoder>
     </appender>
     
     <!-- rolling file -->
     <appender name="ROLLING_FILE" class="ch.qos.logback.core.rolling.RollingFileAppender">
-      <file>./log/app.log</file>
+      <!--file>./log/app.log</file-->
+      <file>${LOG_DIR}/${FILE_NAME}</file>
       <rollingPolicy class="ch.qos.logback.core.rolling.SizeAndTimeBasedRollingPolicy">
-         <fileNamePattern>./log/app-%d{yyyy-MM-dd}.%i.log</fileNamePattern>
-         <maxFileSize>10MB</maxFileSize>
-         <maxHistory>30</maxHistory>
+         <!--fileNamePattern>./log/app-%d{yyyy-MM-dd}.%i.log</fileNamePattern-->
+         <fileNamePattern>${LOG_DIR}/${FILE_NAME}.%d{yyyy-MM-dd}.%i</fileNamePattern>
+         <!--maxFileSize>1MB</maxFileSize-->
+         <maxFileSize>${FILE_SIZE}</maxFileSize>
+         <!--maxHistory>30</maxHistory-->
+         <maxHistory>${FILE_COUNT}</maxHistory>
       </rollingPolicy>
       <encoder>
-         <pattern>%d{yyyy-MM-dd HH:mm:ss.SSS} [%-5level] [%thread] %logger : %msg%n</pattern>
+         <!--pattern>%d{yyyy-MM-dd HH:mm:ss.SSS} [%-5level] [%thread] %logger : %msg%n</pattern-->>
+         <pattern>${PATTERN}</pattern>
       </encoder>
     </appender>
 
