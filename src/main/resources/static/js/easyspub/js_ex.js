@@ -37,6 +37,22 @@ document.querySelector("#change").onclick = function() {
 
 window.onload = function(){
     console.log("www1111111111");
+    //cadit()
+}
+
+function cadit(){
+	console.log("test start")
+	
+	a1 = [1,2,3];
+	a2 = [4,5,6];
+	
+	result = a1.map(function(num, idx){
+		console.log("idx = " + idx + ", num = " + num);
+		return idx*2; 
+	});
+	
+	console.log("result = " + result);
+	
 }
 
 
