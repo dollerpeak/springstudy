@@ -37,21 +37,28 @@ document.querySelector("#change").onclick = function() {
 
 window.onload = function(){
     console.log("www1111111111");
-    //cadit()
+    cadit()
 }
 
 function cadit(){
 	console.log("test start")
 	
-	a1 = [1,2,3];
-	a2 = [4,5,6];
-	
-	result = a1.map(function(num, idx){
-		console.log("idx = " + idx + ", num = " + num);
-		return idx*2; 
-	});
-	
+	//for (let i = 0; i < 2; i++) {
+		a1 = [1, 1, 1];
+		a2 = [4, 5, 6];
+
+		result = a1.map(function(num, idx) {
+			console.log("num = " + num + ", idx = " + idx+ ", a2[idx] = " + a2[idx]);
+			return num + 1 * a2[idx];
+		});
+	//}
+
 	console.log("result = " + result);
+	
+	//num = 1, idx = 0, a2[idx] = 4
+	//num = 2, idx = 1, a2[idx] = 5
+	//num = 3, idx = 2, a2[idx] = 6
+	//result = 5,7,9
 	
 }
 
