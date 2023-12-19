@@ -3,6 +3,8 @@ package com.study.around.controller;
 import java.util.Map;
 import java.util.Map.Entry;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -19,6 +21,7 @@ import io.swagger.v3.oas.annotations.tags.Tag;
 @RequestMapping("/around")
 @Tag(name = "ApiSampleController", description = "desc ApiSampleController")
 public class ApiSampleController {
+	Logger logger = LoggerFactory.getLogger(this.getClass());
 
 	// API를 통해 값을 전달하는 방법
 	
@@ -46,6 +49,7 @@ public class ApiSampleController {
 	public String test1() {
 		// http://localhost:8081/around/test1
 		// 파라메터가 없는 경우
+		logger.info("hell world");
 		return "hell world";
 	}
 
@@ -56,6 +60,7 @@ public class ApiSampleController {
 		// - 파라메터가 없어도 에러가 안남
 		// - name말고 다른 파라메터로 넘어가도 에러 안남
 		// System.out.println("name = " + name);
+		logger.info("name = {}", name);
 		return name;
 	}
 
@@ -65,6 +70,7 @@ public class ApiSampleController {
 		// http://localhost:8081/around/test3?name=value
 		// - 파라메터가 없어도 에러 발생하지 않고 디폴트값 출력
 		// - name말고 다른 파라메터로 넘겨도 에러나지 않고 디폴트값 출력
+		logger.info("name = {}", name);
 		return name;
 	}
 
@@ -73,12 +79,14 @@ public class ApiSampleController {
 	@GetMapping("/test4")
 	public String test4(@RequestParam(required = false, defaultValue = "default") String name) {
 		// http://localhost:8081/around/test4?name=value
+		logger.info("name = {}", name);
 		return name;
 	}
 
 	@GetMapping("/test5")
 	public String test5(@RequestParam(required = true, defaultValue = "default") String name) {
 		// http://localhost:8081/around/test5?name=value
+		logger.info("name = {}", name);
 		return name;
 	}
 
@@ -86,6 +94,7 @@ public class ApiSampleController {
 	public String test6(@RequestParam(value = "name", defaultValue = "default") String value) {
 		// http://localhost:8081/around/test5?name=value
 		// - value = "name"과 uri의 동일값으로 value에 적용됨
+		logger.info("value = {}", value);
 		return value;
 	}
 
@@ -93,6 +102,7 @@ public class ApiSampleController {
 	public String test7(String value1, String value2) {
 		// http://localhost:8081/around/test7?value1=aaa&value2=bbb
 		// - value = "name"과 uri의 동일값으로 value에 적용됨
+		logger.info("value1 = {}, value2 = {}, value1+value2 = {}", value1, value2, value1+value2);
 		return value1 + value2;
 	}
 
@@ -108,6 +118,7 @@ public class ApiSampleController {
 			result += entry.getKey() + entry.getValue();
 		}
 
+		logger.info("result = {}", result);
 		return result;
 	}
 
@@ -115,6 +126,7 @@ public class ApiSampleController {
 	@GetMapping("/test8/{name}")
 	public String test8(@PathVariable String name) {
 		// http://localhost:8081/around/test8/value
+		logger.info("name = {}", name);
 		return name;
 	}
 
@@ -122,6 +134,7 @@ public class ApiSampleController {
 	@GetMapping("/test9/{name}")
 	public String test9(@PathVariable(value = "name") String value) {
 		// http://localhost:8081/around/test9/value
+		logger.info("value = {}", value);
 		return value;
 	}
 
@@ -129,6 +142,7 @@ public class ApiSampleController {
 	@GetMapping("/test10/{value1}/{value2}")
 	public String test10(@PathVariable String value1, @PathVariable String value2) {
 		// http://localhost:8081/around/test10/aaa/bbb
+		logger.info("value1 = {}, value2 = {}, value1+value2 = {}", value1, value2, value1+value2);
 		return value1 + value2;
 	}
 
@@ -136,6 +150,7 @@ public class ApiSampleController {
 	@GetMapping("/test101/1/{value1}/2/{value2}")
 	public String test101(@PathVariable String value1, @PathVariable String value2) {
 		// http://localhost:8081/around/test101/1/abb/2/bcc
+		logger.info("value1 = {}, value2 = {}, value1+value2 = {}", value1, value2, value1+value2);
 		return value1 + value2;
 	}
 
@@ -147,6 +162,7 @@ public class ApiSampleController {
 	public String test11(ApiSampleDTO dto) {
 		// http://localhost:8081/around/test11?id=a&name=b&age=10
 		// System.out.println(dto.toString());
+		logger.info("dto = {}", dto.toString());
 		return dto.toString();
 	}
 
@@ -154,6 +170,7 @@ public class ApiSampleController {
 	@PostMapping("/test12")
 	public String test12(@RequestBody ApiSampleDTO dto) {
 		// http://localhost:8081/around/test11?id=a&name=b&age=10
+		logger.info("dto = {}", dto.toString());
 		return dto.toString();
 	}
 
@@ -166,6 +183,7 @@ public class ApiSampleController {
 			reval += entry.getKey() + entry.getValue();
 		}
 
+		logger.info("reval = {}", reval);
 		return reval;
 	}
 
