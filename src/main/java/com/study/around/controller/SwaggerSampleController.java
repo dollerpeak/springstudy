@@ -24,7 +24,7 @@ import io.swagger.v3.oas.annotations.responses.ApiResponses;
 import io.swagger.v3.oas.annotations.tags.Tag;
 
 @RestController
-@RequestMapping("/swagger")
+@RequestMapping("/around/swagger")
 @Tag(name = "Controller 제목", description = "Controller 설명")
 public class SwaggerSampleController {
 
@@ -43,7 +43,7 @@ public class SwaggerSampleController {
 	@Operation(summary = "@PathVariable 한개", description = "@PathVariable 한개 문자열 반환")
 	@Parameter(name = "value", description = "문자열 한개", example = "test1", required = true) // default required = false
 	public String getVariableOne(@PathVariable String value) {
-		// http://localhost:8081/swagger/get/test1
+		// http://localhost:8081/around/swagger/get/test1
 		return value;
 	}
 	
@@ -54,7 +54,7 @@ public class SwaggerSampleController {
 			@Parameter(name = "v3", description = "문자열", example = "test3", required = true) 
 	})
 	public String getVariableMany(@PathVariable String value1, @PathVariable String value2, @PathVariable String v3) {
-		// http://localhost:8081/swagger/get/many/v1/test1/v2/test2/test3
+		// http://localhost:8081/around/swagger/get/many/v1/test1/v2/test2/test3
 		return value1 + value2 + v3;
 	}
 	
@@ -65,7 +65,7 @@ public class SwaggerSampleController {
 	@Parameter(name = "age", description = "age", example = "12", required = true)
 	public SwaggerSampleDTO getVariableManyToDto(@PathVariable String id, @PathVariable String name,
 			@PathVariable String age) {
-		// http://localhost:8081/swagger/get/dto/v1/isid/v2/isname/12
+		// http://localhost:8081/around/swagger/get/dto/v1/isid/v2/isname/12
 		SwaggerSampleDTO dto = new SwaggerSampleDTO();
 		dto.setId(id);
 		dto.setName(name);
@@ -79,7 +79,7 @@ public class SwaggerSampleController {
 	@Operation(summary = "@RequestParam 한개", description = "@RequestParam 한개 문자열 반환")
 	@Parameter(name = "value", description = "문자열", example = "test1", required = true)
 	public String getParamOne(@RequestParam String value) {
-		// http://localhost:8081/swagger/get/one?value=test1
+		// http://localhost:8081/around/swagger/get/one?value=test1
 		return value;
 	}
 	
@@ -87,7 +87,7 @@ public class SwaggerSampleController {
 	@Operation(summary = "@RequestParam 여러개", description = "@RequestParam 여러개 문자열 반환")
 	@Parameter(name = "value", description = "문자열", example = "value1=test1&value2=test2", required = true)
 	public String getParamMany(@RequestParam String value1, @RequestParam String value2) {
-		// http://localhost:8081/swagger/get/many?value1=test1&value2=test2
+		// http://localhost:8081/around/swagger/get/many?value1=test1&value2=test2
 		return value1 + value2;
 	}
 	
@@ -95,7 +95,7 @@ public class SwaggerSampleController {
 	@Operation(summary = "@RequestParam 여러개", description = "@RequestParam 여러개 map 반환")
 	@Parameter(name = "map", description = "map", example = "key1=value1&key2=value2&key3=value3", required = true)
 	public Map<String, String> getParamToMap(@RequestParam Map<String, String> map) {
-		// http://localhost:8081/swagger/get/map?key1=value1&key2=value2&key3=value3
+		// http://localhost:8081/around/swagger/get/map?key1=value1&key2=value2&key3=value3
 		return map;
 	}
 	
@@ -103,7 +103,7 @@ public class SwaggerSampleController {
 	@Operation(summary = "@RequestParam 여러개", description = "@RequestParam 여러개 dto 반환")
 	@Parameter(name = "map", description = "map", example = "key1=isid&key2=isname&key3=12", required = true)
 	public SwaggerSampleDTO getParamToDto(@RequestParam Map<String, String> map) {
-		// http://localhost:8081/swagger/get/dto?key1=isid&key2=isname&key3=12
+		// http://localhost:8081/around/swagger/get/dto?key1=isid&key2=isname&key3=12
 		SwaggerSampleDTO dto = new SwaggerSampleDTO();
 		dto.setId(map.get("key1"));
 		dto.setName(map.get("key2"));
@@ -117,7 +117,7 @@ public class SwaggerSampleController {
 	@Operation(summary = "@RequestBody map", description = "@RequestBody map 받기")
 	@Parameter(name = "map", description = "map", example = "http://localhost:8081/swagger/post/map", required = true)
 	public Map<String, String> postToMap(@RequestBody Map<String, String> map) {
-		// http://localhost:8081/swagger/post/map
+		// http://localhost:8081/around/swagger/post/map
 		// "id": "isid",
 		// "name": "isname",
 		// "age": 12
@@ -133,7 +133,7 @@ public class SwaggerSampleController {
 			@ApiResponse(responseCode = "500", description = "서버 에러", content = @Content(schema = @Schema(implementation = SwaggerSampleDTO.class))) 
 	})
 	public SwaggerSampleDTO postDto(@RequestBody SwaggerSampleDTO dto) {
-		// http://localhost:8081/swagger/post/dto
+		// http://localhost:8081/around/swagger/post/dto
 		// "id": "isid",
 		// "name": "isname",
 		// "age": 12
@@ -143,7 +143,7 @@ public class SwaggerSampleController {
 	@PostMapping("/post/entity")
 	@Operation(summary = "@RequestBody ResponseEntity", description = "@RequestBody ResponseEntity 반환")
 	public ResponseEntity<SwaggerSampleDTO> postEntity(@RequestBody SwaggerSampleDTO dto) {
-		// http://localhost:8081/swagger/entity/dto
+		// http://localhost:8081/around/swagger/entity/dto
 		// "id": "isid",
 		// "name": "isname",
 		// "age": 12

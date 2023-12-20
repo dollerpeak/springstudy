@@ -20,7 +20,7 @@ import io.swagger.v3.oas.annotations.tags.Tag;
 import jakarta.validation.Valid;
 
 @RestController
-@RequestMapping("/product")
+@RequestMapping("/around/product")
 @Tag(name = "ProductController", description = "기능설명")
 public class ProductController {
 	Logger logger = LoggerFactory.getLogger(this.getClass());

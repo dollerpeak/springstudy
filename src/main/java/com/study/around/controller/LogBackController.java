@@ -10,7 +10,7 @@ import io.swagger.v3.oas.annotations.Operation;
 import io.swagger.v3.oas.annotations.tags.Tag;
 
 @RestController
-@RequestMapping("/logger")
+@RequestMapping("/around/logger")
 @Tag(name = "LogBackController", description = "기능설명")
 public class LogBackController {
 	Logger logger = LoggerFactory.getLogger(this.getClass());

@@ -13,7 +13,7 @@ import io.swagger.v3.oas.annotations.Operation;
 import io.swagger.v3.oas.annotations.tags.Tag;
 
 @RestController
-@RequestMapping("/exception")
+@RequestMapping("/around/exception")
 @Tag(name = "ExceptionController", description = "custom exception 기능")
 public class ExceptionController {
 	Logger logger = LoggerFactory.getLogger(this.getClass());
