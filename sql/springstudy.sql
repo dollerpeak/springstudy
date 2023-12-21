@@ -1,5 +1,4 @@
 
-<<<<<<< HEAD
 -- DML study-------------------------------------------------------------------------------
 
 select * from zoo
@@ -21,10 +20,6 @@ select datetime()
 
 
 -- DDL -------------------------------------------------------------------------------
-
-=======
-use aroundhub
->>>>>>> branch 'main' of https://github.com/dollerpeak/springstudy.git
 -- 테이블 생성
 -- column name, data type, null|not null, default value, comment
 create table test 
