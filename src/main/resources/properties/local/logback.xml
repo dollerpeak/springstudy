@@ -4,8 +4,7 @@
 	<property name="FILE_NAME" value="test.log" />
 	<property name="FILE_SIZE" value="1MB" />
 	<property name="FILE_COUNT" value="30" />
-	<property name="PATTERN"
-		value="%d{yyyy-MM-dd HH:mm:ss.SSS} [%-5level] [%thread] %logger{36} : %msg%n" />
+	<property name="PATTERN" value="%d{yyyy-MM-dd HH:mm:ss.SSS} [%-5level] [%thread] %logger{36} : %msg%n" />
 
 	<!-- cosole -->
 	<appender name="CONSOLE"
@@ -22,8 +21,7 @@
 		<file>${LOG_DIR}/${FILE_NAME}</file>
 		<rollingPolicy
 			class="ch.qos.logback.core.rolling.SizeAndTimeBasedRollingPolicy">
-			<fileNamePattern>${LOG_DIR}/${FILE_NAME}.%d{yyyy-MM-dd}.%i
-			</fileNamePattern>
+			<fileNamePattern>${LOG_DIR}/${FILE_NAME}.%d{yyyy-MM-dd}.%i</fileNamePattern>
 			<maxFileSize>${FILE_SIZE}</maxFileSize>
 			<maxHistory>${FILE_COUNT}</maxHistory>
 		</rollingPolicy>
@@ -32,7 +30,7 @@
 		</encoder>
 	</appender>
 
-	<root level="ERROR">
+	<root level="INFO">
 		<appender-ref ref="CONSOLE" />
 		<appender-ref ref="ROLLING_FILE" />
 	</root>
