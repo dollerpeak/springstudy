@@ -1,4 +1,4 @@
-package com.study.around.controller;
+package com.study.config.logback;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;

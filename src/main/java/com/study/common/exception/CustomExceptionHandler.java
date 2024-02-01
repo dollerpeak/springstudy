@@ -9,7 +9,7 @@ import org.springframework.http.HttpHeaders;
 import org.springframework.web.bind.annotation.ExceptionHandler;
 import org.springframework.web.bind.annotation.RestControllerAdvice;
 
-@RestControllerAdvice
+//@RestControllerAdvice
 public class CustomExceptionHandler {
 	Logger logger = LoggerFactory.getLogger(this.getClass());
 

@@ -43,6 +43,7 @@ create table zoo (
 	constraint zoo_pk primary key(id) comment '동물원'
 )
 
+
 -- alter
 alter table zoo
 add reg_date datetime not null default current_timestamp comment '등록 날짜',
@@ -97,6 +98,29 @@ select now()
 select now(), sysdate(), current_timestamp
 select datetime()
 
+
+
+
+create table board (
+	id int(11) not null auto_increment comment 'seq id',
+	title varchar(100) not null comment '제목',
+	content varchar(1000) null comment '내용',
+	name varchar(100) not null comment '작성자',
+	hit int(11) null default 0 comment '읽은수',
+	reg_date datetime not null default current_timestamp comment '등록 날짜', 
+	chg_date datetime not null default current_timestamp comment '변경 날짜',
+	
+	constraint board_pk primary key(id) comment '게시판'
+)
+
+insert into board 
+(title, content, name)
+values 
+('제목3', '내용3', '이름3')
+
+select * from board
+
+commit
 
 
 
