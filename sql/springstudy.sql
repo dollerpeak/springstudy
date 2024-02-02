@@ -80,8 +80,12 @@ where id=1
 -- 테이블 조회
 select * from zoo
 select * from product
+select * from board
 
+SELECT 1 FROM dual
 
+desc product 
+desc board 
 
 select chg_date  from zoo
 select date_format(chg_date, '%Y-%m-%d %H:%i:%s')  from zoo
