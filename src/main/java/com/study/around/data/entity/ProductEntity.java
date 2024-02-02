@@ -2,24 +2,21 @@ package com.study.around.data.entity;
 
 import com.study.around.data.dto.ProductDto;
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.Id;
-import jakarta.persistence.Table;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 import lombok.ToString;
 
-@Entity
+//@Entity
 @Getter
 @Setter
 @ToString
 @NoArgsConstructor
 @AllArgsConstructor
-@Table(name = "product")
+//@Table(name = "product")
 public class ProductEntity {
-	@Id
+//	@Id
 	String id;
 	String name;
 	Integer price;

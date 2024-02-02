@@ -1,11 +1,18 @@
-package com.study.dbms.service;
+package com.study.dbms.dao;
 
 import java.util.List;
 
+import org.apache.ibatis.annotations.Mapper;
+
 import com.study.dbms.dto.MybatisDto;
 
-public interface MybatisService {
+@Mapper
+public interface MybatisDao {
+
 	public int getCount();
+
 	public List<MybatisDto> getList();
+	
 	public MybatisDto getDetail(String id);
+
 }

@@ -1,18 +1,18 @@
-package com.study.mybatis.data.dto;
+package com.study.dbms.dto;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
 @Data
-@NoArgsConstructor
 @AllArgsConstructor
+@NoArgsConstructor
 public class MybatisDto {
 	private int id;
 	private String title;
 	private String content;
 	private String name;
 	private int hit;
-	private String reg_date; 
-	private String chg_date;
+	private String regDate; 
+	private String chgDate;
 }

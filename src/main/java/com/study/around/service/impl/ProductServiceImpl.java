@@ -7,10 +7,10 @@ import com.study.around.data.dao.ProductDao;
 import com.study.around.data.dto.ProductDto;
 import com.study.around.service.ProductService;
 
-import jakarta.transaction.Transactional;
+//import jakarta.transaction.Transactional;
 
 @Service
-@Transactional
+//@Transactional
 public class ProductServiceImpl implements ProductService {
 	
 	@Autowired
