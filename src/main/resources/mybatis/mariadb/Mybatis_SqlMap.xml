@@ -13,10 +13,6 @@
 		SELECT * FROM BOARD
 		WHERE 1=1
 		AND 1=1
-		AND 1=1
-		AND 1=1
-		AND 1=1
-		AND 1=1
 	</select>
 
 	<select id="getDetail" parameterType="java.lang.String"
